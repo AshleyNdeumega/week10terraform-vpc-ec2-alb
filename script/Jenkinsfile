@@ -19,7 +19,7 @@ pipeline{
         }
         stage('plan'){
             steps{
-                sh 'terraform plan -no-color'
+                sh 'terraform plan -var ENVIRONMENT=$ENVIRONMENT -var REGION=$REGION -var INSTANCE_TYPE=$INSTANCE_TYPE -no-color'
             }
         }
     }
